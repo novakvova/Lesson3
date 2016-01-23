@@ -1,0 +1,33 @@
+﻿<Window x:Class="EmailSender.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="310" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions></Grid.RowDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Margin="10, 10, 0, 10">Тема листа</Label>
+            <TextBox x:Name="tbSubject" x:FieldModifier="public" Width="200" HorizontalAlignment="Left" Margin="10, 0 , 0, 0"></TextBox>
+            <Label Margin="10, 10, 0, 10">Текст</Label>
+            <TextBox x:Name="tbText" x:FieldModifier="public" Width="200" Height="100" HorizontalAlignment="Left" 
+                     Margin="10, 0 , 0, 0" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+            <Button x:Name="btnSend" x:FieldModifier="public" Margin="10, 20, 10, 10" Height="30"
+                    Click="SendEmeil">Відправити</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label Margin="10, 10, 0, 0">Перелік отримувачів</Label>
+            <ListBox x:Name="lbEmails" x:FieldModifier="public" Margin="10, 10, 10, 10" Height="135"
+                     IsTextSearchEnabled="True" SelectionMode="Multiple">
+                <ListBoxItem>oleksandr.pastukhov@gmail.com</ListBoxItem>
+            </ListBox>
+            <TextBox x:Name="tbNewEmail" x:FieldModifier="public"  HorizontalAlignment="Stretch" 
+                     Margin="10, 0 , 10, 0" ></TextBox>
+            <Button x:Name="btnAdd" x:FieldModifier="public" Margin="10, 20, 10, 10" Height="30"
+                    Click="AddEmail"
+                    >Додати</Button>
+        </StackPanel>
+    </Grid>
+</Window>
